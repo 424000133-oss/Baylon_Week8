@@ -1,0 +1,50 @@
+int calculatePoints(int score) {
+  if (score >= 100) {
+    return score + 50;
+  } else {
+    return score + 10;
+  }
+}
+
+void main() {
+  print("=== GAMING POINT CALCULATOR ===");
+
+ 
+  int score = 50;
+
+
+  if (score < 0) {
+    print("Invalid score!");
+    return;
+  }
+
+  print("Starting Score: $score");
+
+
+  for (int round = 1; round <= 3; round++) {
+    score += 20;
+    print("Round $round: Score = $score");
+  }
+
+  int finalPoints = calculatePoints(score);
+
+
+  print("\n=== FINAL RESULT ===");
+  print("Final Score: $score");
+
+  if (finalPoints >= 150) {
+    print("Rank: Pro Gamer!");
+  } else {
+    print("Rank: Beginner Gamer!");
+  }
+
+  print("Total Points with Bonus: $finalPoints");
+
+
+  try {
+    int testScore = int.parse("invalid");
+    print(testScore);
+  } catch (e) {
+    print("Error handled: Invalid score input.");
+  }
+}
